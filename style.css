@@ -1,0 +1,839 @@
+:root {
+  /* Cores da Paleta */
+  --aviva-dark: #1a1a1a;
+  --aviva-light: #f8f5ef;
+  --aviva-ocean: #5588b4;
+  --aviva-green: #8fb38f;
+  --aviva-grey: #cccccc;
+
+  /* Tipografia */
+  --font-heading: "Poppins", sans-serif;
+  --font-body: "Open Sans", sans-serif;
+  --font-size-base: 1rem;
+  --font-size-h1: 2.5rem;
+  --font-size-h2: 2rem;
+  --font-size-h3: 1.5rem;
+
+  /* Espaçamento */
+  --spacing-sm: 0.25rem;
+  --spacing-md: 0.5rem;
+  --spacing-lg: 1.5rem;
+  --spacing-xl: 3rem;
+
+  /* Outros */
+  --border-radius-md: 8px;
+  --border-radius-lg: 16px;
+  --border-radius-xl: 50px;
+}
+
+/* 1. Reset Básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  background-color: var(--aviva-light);
+  color: var(--aviva-dark);
+  font-family: var(--font-body);
+  line-height: 1.6;
+  font-size: var(--font-size-base);
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: var(--aviva-dark);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Estilos de Utilidade */
+.mb-sm {
+  margin-bottom: var(--spacing-sm);
+}
+
+/* Estilos de Títulos */
+h1,
+h2,
+h3 {
+  font-family: var(--font-heading);
+  color: var(--aviva-dark);
+  line-height: 1.2;
+  margin-bottom: var(--spacing-lg);
+}
+
+h2 {
+  font-size: var(--font-size-h2);
+  text-align: left;
+  padding-top: var(--spacing-sm);
+}
+
+/* Botões de Ação (CTA) */
+.cta-button,
+.button {
+  display: inline-block;
+  padding: var(--spacing-sm) var(--spacing-lg);
+  border-radius: var(--border-radius-xl);
+  font-weight: 600;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.cta-button {
+  background-color: var(--aviva-ocean);
+  color: var(--aviva-light);
+  border: 2px solid var(--aviva-ocean);
+}
+
+.cta-button:hover {
+  background-color: var(--aviva-dark);
+  border-color: var(--aviva-dark);
+}
+
+.cta-button.copiado {
+  background-color: #28a745;
+}
+
+.button {
+  background-color: var(--aviva-ocean);
+  color: var(--aviva-light);
+  padding: var(--spacing-md) var(--spacing-xl);
+}
+
+.button:hover {
+  background-color: var(--aviva-dark);
+}
+
+/* Estilo para todas as seções principais do conteúdo */
+main section {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-lg);
+}
+
+/* 3. Cabeçalho (HEADER) e Navegação (NAV) */
+header {
+  background-color: var(--aviva-light);
+  box-shadow: 0 6px 6px rgba(0, 0, 0, 0.15);
+  position: relative;
+  width: 100%;
+  z-index: 1000;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--spacing-sm);
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+nav img {
+  width: 80px;
+  padding: var(--spacing-sm);
+  margin-bottom: var(--spacing-sm);
+  z-index: 1001;
+}
+
+nav ul {
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+  gap: var(--spacing-lg);
+  align-items: center;
+}
+
+nav a {
+  font-weight: 800;
+}
+
+/* Botão Hambúrguer */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  z-index: 1001;
+  background: none;
+  border: none;
+  padding: 0;
+}
+
+.hamburger span {
+  width: 30px;
+  height: 3px;
+  background-color: var(--aviva-dark);
+  margin: 4px 0;
+  transition: all 0.3s ease;
+  border-radius: 3px;
+}
+
+/* Animação do Hambúrguer para X */
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translate(8px, 8px);
+}
+
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(8px, -8px);
+}
+
+/* Overlay escuro quando menu aberto */
+.menu-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.menu-overlay.active {
+  display: block;
+  opacity: 1;
+}
+
+/* 4. Seção Hero (DESTAQUE PRINCIPAL) */
+.hero-banner {
+  position: relative;
+  height: 400px;
+  background-image: url("./img/igreja1.jpg");
+  background-size: cover;
+  background-position: center;
+  border-radius: var(--border-radius-md);
+  margin-bottom: var(--spacing-lg);
+  margin-top: var(--spacing-lg);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.4);
+  color: var(--aviva-light);
+}
+
+.hero-banner h1 {
+  font-size: var(--font-size-h1);
+  color: var(--aviva-light);
+  margin-bottom: var(--spacing-sm);
+}
+
+.hero-banner p {
+  font-size: 1.25rem;
+  margin-bottom: var(--spacing-lg);
+  font-weight: 400;
+}
+
+/* 5. Seção Nossas Ações (CARDS) */
+#nossas-acoes {
+  background-color: var(--aviva-light);
+  margin-bottom: var(--spacing-lg);
+}
+
+.acoes-container {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--spacing-lg);
+  margin-top: var(--spacing-sm);
+}
+
+.acoes-container article {
+  flex-basis: 32%;
+  text-align: center;
+  background-color: #ffffff;
+  padding: var(--spacing-xl);
+  border-radius: var(--border-radius-md);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.acoes-container article h3 {
+  color: var(--aviva-ocean);
+}
+
+.acoes-container article i {
+  color: var(--aviva-ocean);
+  margin-bottom: var(--spacing-sm);
+  display: block;
+}
+
+/* 6. Seção Doações */
+#doacoes h2 {
+  color: var(--aviva-dark);
+}
+
+.doacao-info {
+  display: grid;
+  max-width: 400px;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  align-items: start;
+  padding: var(--spacing-lg);
+  background-color: var(--aviva-light);
+  border: 3px solid var(--aviva-ocean);
+  border-radius: var(--border-radius-md);
+  margin-bottom: var(--spacing-lg);
+}
+
+.chavepix-bloco,
+.dados-bancarios {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: center;
+  height: 100%;
+}
+
+#qr-code {
+  width: 100%;
+  max-width: 350px;
+  margin-bottom: var(--spacing-sm);
+  border-radius: 10px;
+  padding: var(--spacing-sm);
+  background-color: white;
+}
+#pix-icon {
+  color: #38beb0;
+  margin: var(--spacing-md);
+}
+#cora-logo {
+  width: 40px;
+  border-radius: 5px;
+  margin: 0 auto;
+}
+
+.dados-bancarios h3,
+.chavepix-bloco h3 {
+  margin-top: 0;
+  color: var(--aviva-ocean);
+  margin-bottom: var(--spacing-md);
+}
+
+/* 7. Rodapé (FOOTER) */
+footer {
+  background-color: var(--aviva-dark);
+  color: var(--aviva-grey);
+  padding: var(--spacing-xl) 5%;
+}
+.copyright a {
+  color: var(--aviva-ocean);
+}
+
+.footer-content {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  max-width: 900px;
+  margin: 0 auto;
+  padding-bottom: var(--spacing-xl);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-contato {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.footer-contato img {
+  width: 120px;
+  filter: invert(1);
+  margin-bottom: var(--spacing-md);
+}
+
+.contact-info {
+  flex-grow: 1;
+  padding: 0 var(--spacing-lg);
+}
+
+.contact-info h4 {
+  margin-bottom: var(--spacing-sm);
+  font-size: 1.1rem;
+  color: var(--aviva-light);
+}
+
+.contact-info p {
+  font-size: 0.95rem;
+  margin-bottom: var(--spacing-sm);
+}
+
+.contact-links {
+  margin-top: var(--spacing-md);
+}
+
+.contact-links li {
+  margin-bottom: var(--spacing-sm);
+}
+
+.contact-links a {
+  color: var(--aviva-grey);
+  display: flex;
+  align-items: center;
+  transition: color 0.3s;
+}
+
+.contact-links a:hover {
+  color: var(--aviva-ocean);
+}
+
+.contact-links a i {
+  margin-right: var(--spacing-sm);
+  font-size: 1rem;
+}
+
+.social-icons {
+  display: flex;
+  gap: var(--spacing-md);
+  margin-top: 0;
+}
+
+.social-icons a {
+  color: var(--aviva-grey);
+  font-size: 1.5rem;
+  transition: color 0.3s;
+}
+
+.social-icons a:hover {
+  color: var(--aviva-ocean);
+}
+
+.copyright {
+  text-align: center;
+  font-size: 0.75rem;
+  margin-top: var(--spacing-md);
+}
+
+/* Estilos de Mapa e Endereço */
+.mapa-container iframe {
+  width: 100%;
+  height: 400px;
+  border: 0;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.link-map {
+  color: var(--aviva-ocean);
+}
+
+.link-map:hover {
+  text-decoration: underline;
+}
+
+.endereco-info {
+  text-align: left;
+  margin-top: var(--spacing-md);
+}
+
+#onde-estamos {
+  margin-bottom: var(--spacing-lg);
+}
+
+/* SEÇÃO SOBRE NÓS */
+#sobre-nos {
+  background-color: #ffffff;
+  max-width: 100%;
+  padding-top: var(--spacing-lg);
+  padding-bottom: var(--spacing-lg);
+  margin-bottom: var(--spacing-lg);
+  box-shadow: 0 6px 6px rgba(0, 0, 0, 0.15);
+}
+
+#sobre-nos-wrapper {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-lg);
+}
+
+.sobre-nos-container {
+  display: flex;
+  gap: var(--spacing-xl);
+  align-items: flex-start;
+  margin-top: var(--spacing-lg);
+}
+
+.historia-missao {
+  flex: 1;
+}
+
+.sobre-nos-midia {
+  flex: 1;
+  align-self: center;
+}
+
+.sobre-nos-midia img {
+  width: 100%;
+  max-height: 400px;
+  object-fit: cover;
+  border-radius: var(--border-radius-md);
+}
+
+.historia-missao ul {
+  margin-top: var(--spacing-md);
+  padding-left: 0;
+}
+
+.historia-missao ul li {
+  margin-bottom: var(--spacing-sm);
+  display: flex;
+  align-items: center;
+}
+
+.historia-missao ul li i {
+  color: var(--aviva-ocean);
+  margin-right: var(--spacing-sm);
+}
+
+/* SEÇÃO CULTOS */
+#cultos {
+  background-color: var(--aviva-light);
+  text-align: center;
+  margin-bottom: var(--spacing-lg);
+}
+
+.cultos-container {
+  display: flex;
+  justify-content: center;
+  gap: var(--spacing-xl);
+  margin-top: var(--spacing-lg);
+}
+
+.horarios {
+  flex-basis: 32%;
+  text-align: center;
+  background-color: #ffffff;
+  padding: var(--spacing-xl);
+  border-radius: var(--border-radius-md);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.horarios h3 {
+  color: var(--aviva-ocean);
+}
+
+.horarios i {
+  color: var(--aviva-ocean);
+  margin-bottom: var(--spacing-sm);
+  display: block;
+}
+
+/* ================================================= */
+/* MEDIA QUERIES - RESPONSIVIDADE MOBILE */
+/* ================================================= */
+
+/* Tablets e telas médias */
+@media (max-width: 900px) {
+  :root {
+    --font-size-h1: 2rem;
+    --font-size-h2: 1.75rem;
+    --font-size-h3: 1.25rem;
+  }
+
+  main section {
+    padding: 0 var(--spacing-md);
+  }
+
+  /* Navegação em tablets */
+  nav ul {
+    width: auto;
+    gap: var(--spacing-md);
+  }
+
+  nav a {
+    font-size: 0.9rem;
+  }
+
+  /* Hero Banner */
+  .hero-banner {
+    height: 350px;
+  }
+
+  .hero-banner h1 {
+    font-size: 2rem;
+    padding: 0 var(--spacing-md);
+  }
+
+  .hero-banner p {
+    font-size: 1.1rem;
+    padding: 0 var(--spacing-md);
+  }
+
+  /* Cards de Ações - 2 colunas */
+  .acoes-container {
+    flex-wrap: wrap;
+  }
+
+  .acoes-container article {
+    flex-basis: 48%;
+  }
+
+  /* Cultos - 2 colunas */
+  .cultos-container {
+    flex-wrap: wrap;
+  }
+
+  .horarios {
+    flex-basis: 48%;
+  }
+}
+
+/* Smartphones e telas pequenas */
+@media (max-width: 768px) {
+  :root {
+    --font-size-h1: 1.75rem;
+    --font-size-h2: 1.5rem;
+    --font-size-h3: 1.15rem;
+    --spacing-xl: 2rem;
+  }
+
+  /* Header fixo no topo para mobile */
+  header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+  }
+
+  /* Adiciona espaço para compensar o header fixo */
+  main {
+    padding-top: 70px;
+  }
+
+  /* Navegação Mobile - Menu Hambúrguer */
+  .hamburger {
+    display: flex;
+  }
+
+  nav {
+    padding: var(--spacing-md);
+  }
+
+  nav img {
+    width: 70px;
+  }
+
+  nav ul {
+    position: fixed;
+    left: -100%;
+    top: 0;
+    flex-direction: column;
+    background-color: var(--aviva-light);
+    width: 280px;
+    height: 100vh;
+    padding-top: 80px;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+    transition: left 0.3s ease;
+    gap: 0;
+    z-index: 1000;
+  }
+
+  nav ul.active {
+    left: 0;
+  }
+
+  nav ul li {
+    width: 100%;
+    text-align: center;
+    padding: 1rem 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  }
+
+  nav ul li a {
+    display: block;
+    padding: 0.5rem;
+    font-size: 1.1rem;
+  }
+
+  .cta-button {
+    margin-top: 1rem;
+  }
+
+  /* Hero Banner Mobile */
+  .hero-banner {
+    height: 300px;
+    margin-top: 0;
+    border-radius: 0;
+  }
+
+  .hero-banner h1 {
+    font-size: 1.5rem;
+  }
+
+  .hero-banner p {
+    font-size: 1rem;
+  }
+  #nossas-acoes {
+    scroll-margin-top: 6rem;
+  }
+  /* Cards de Ações - 1 coluna */
+  .acoes-container {
+    flex-direction: column;
+  }
+
+  .acoes-container article {
+    flex-basis: 100%;
+    padding: var(--spacing-lg);
+  }
+
+  /* Doações Mobile */
+  .doacao-info {
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* Sobre Nós Mobile */
+  .sobre-nos-container {
+    flex-direction: column;
+  }
+
+  .sobre-nos-midia {
+    order: -1;
+    margin-bottom: var(--spacing-lg);
+  }
+  #sobre-nos {
+    scroll-margin-top: 5rem;
+  }
+  #sobre-nos-wrapper {
+    padding: 0 var(--spacing-md);
+  }
+
+  #cultos {
+    scroll-margin-top: 6rem;
+  }
+
+  /* Cultos Mobile - 1 coluna */
+  .cultos-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .horarios {
+    flex-basis: 100%;
+    width: 100%;
+    max-width: 450px;
+  }
+
+  #onde-estamos {
+    scroll-margin-top: 6rem;
+  }
+
+  #doacoes {
+    scroll-margin-top: 6rem;
+  }
+
+  /* Footer Mobile */
+  .footer-contato {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .footer-contato img {
+    margin-bottom: var(--spacing-lg);
+  }
+
+  .contact-info {
+    padding: 0;
+    margin-bottom: var(--spacing-lg);
+  }
+
+  .contact-links a {
+    justify-content: center;
+  }
+
+  .social-icons {
+    justify-content: center;
+  }
+
+  /* Mapa Mobile */
+  .mapa-container iframe {
+    height: 300px;
+  }
+}
+
+/* Smartphones muito pequenos */
+@media (max-width: 480px) {
+  :root {
+    --font-size-h1: 1.5rem;
+    --font-size-h2: 1.25rem;
+    --font-size-h3: 1rem;
+    --spacing-lg: 1rem;
+    --spacing-xl: 1.5rem;
+  }
+
+  body {
+    font-size: 0.9rem;
+  }
+
+  /* Hero Banner */
+  .hero-banner {
+    height: 350px;
+  }
+
+  .hero-banner h1 {
+    font-size: 1.25rem;
+  }
+
+  .hero-banner p {
+    font-size: 0.9rem;
+  }
+
+  .button {
+    padding: var(--spacing-sm) var(--spacing-lg);
+    font-size: 0.9rem;
+  }
+
+  /* Cards menores */
+  .acoes-container article {
+    padding: var(--spacing-md);
+  }
+
+  /* Footer compacto */
+  footer {
+    padding: var(--spacing-lg) var(--spacing-md);
+  }
+
+  .footer-contato img {
+    width: 100px;
+  }
+
+  .social-icons a {
+    font-size: 1.25rem;
+  }
+}
+
+/* Landscape em smartphones */
+@media (max-width: 900px) and (orientation: landscape) {
+  .hero-banner {
+    height: 250px;
+  }
+
+  nav ul {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}

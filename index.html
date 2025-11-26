@@ -3,7 +3,339 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Aviva Church Beach</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Poppins:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <title>Aviva Church Beach | Fé, Esperança e Comunidade</title>
   </head>
-  <body></body>
+  <body>
+    <header>
+      <nav>
+        <img src="./img/logo.png" alt="Logo Aviva Church Beach" />
+
+        <!-- Botão Hambúrguer -->
+        <button class="hamburger" id="hamburger" aria-label="Menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <ul id="navMenu">
+          <li class="nav-link"><a href="#">Home</a></li>
+          <li class="nav-link"><a href="#sobre-nos">Sobre Nós</a></li>
+          <li class="nav-link"><a href="#cultos">Cultos</a></li>
+          <li class="nav-link"><a href="#onde-estamos">Onde Estamos</a></li>
+          <li class="nav-link"><a href="#contato">Contato</a></li>
+          <li><a href="#doacoes" class="cta-button">Doar</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- Overlay escuro -->
+    <div class="menu-overlay" id="menuOverlay"></div>
+
+    <main>
+      <section id="hero" class="hero-banner">
+        <h1>Adoração Apaixonada e o Reino Manifestado</h1>
+        <p>
+          Atraídos pela Cruz, Vivemos a Verdade para Manifestar o Reino de Deus.
+        </p>
+        <a href="#nossas-acoes" class="button">Conheça Nossos Propósitos</a>
+      </section>
+
+      <section id="sobre-nos">
+        <div id="sobre-nos-wrapper">
+          <h2>Nossa História e Propósito</h2>
+          <div class="sobre-nos-container">
+            <article class="historia-missao">
+              <h3>Quem Somos</h3>
+              <p>História da Aviva Church Beach....</p>
+              <p>
+                Nosso desejo é que cada pessoa experimente uma adoração
+                verdadeira, íntima, voluntária e apaixonada.
+              </p>
+              <br />
+              <h3>Visão e Valores</h3>
+              <ul>
+                <li>
+                  <i class="fas fa-check-circle"></i> Manifestar o Reino de Deus
+                  na terra.
+                </li>
+                <li>
+                  <i class="fas fa-check-circle"></i> Impacto Social e
+                  Comunitário.
+                </li>
+                <li>
+                  <i class="fas fa-check-circle"></i> Ensino e Aconselhamento
+                  Bíblico.
+                </li>
+              </ul>
+            </article>
+            <div class="sobre-nos-midia">
+              <img
+                src="./img/petronio.jpg"
+                alt="Foto da equipe ou do pastor Petronio"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="cultos">
+        <h2>Nossos Encontros e Cultos</h2>
+        <div class="cultos-container">
+          <article class="horarios">
+            <i class="far fa-3x fa-calendar-alt"></i>
+            <h3>Quartas</h3>
+            <p>às 20:00h</p>
+          </article>
+          <article class="horarios">
+            <i class="far fa-3x fa-calendar-alt"></i>
+            <h3>Sábados</h3>
+            <p>às 20:00h</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="onde-estamos">
+        <h2>Onde Estamos</h2>
+
+        <div class="mapa-container">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7298.520571171063!2d-46.14088833332066!3d-23.844889377958225!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94cdfb8a8975d497%3A0xa1a9ba3a50074c30!2sAviva%20Church!5e0!3m2!1spt-BR!2sbr!4v1764095625981!5m2!1spt-BR!2sbr"
+            width="600"
+            height="450"
+            style="border: 0"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
+        </div>
+
+        <div class="endereco-info">
+          <h3>Nosso Endereço</h3>
+          <p>Av. Tomé de Souza, 1029</p>
+          <p>Centro, Bertioga - SP, 11250-000</p>
+          <p>
+            <a
+              class="link-map"
+              href="https://maps.app.goo.gl/D6eRrcSTMgnE8EU58"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Ver no Google Maps
+            </a>
+          </p>
+        </div>
+      </section>
+
+      <section id="nossas-acoes">
+        <h2>Nossas Ações</h2>
+
+        <div class="acoes-container">
+          <article>
+            <i class="fas fa-hand-holding-heart fa-3x icon-color"></i>
+            <h3>Impacto Social</h3>
+            <p>Alimentando famílias e capacitando jovens</p>
+          </article>
+          <article>
+            <i class="fas fa-book-open fa-3x icon-color"></i>
+            <h3>Apoio Espiritual</h3>
+            <p>Comunhão e aconselhamento bíblico</p>
+          </article>
+          <article>
+            <i class="fas fa-hand-holding-usd fa-3x icon-color"></i>
+            <h3>Doações</h3>
+            <p>Sua generosidade transforma vidas</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="doacoes">
+        <h2>Transforme Vidas</h2>
+        <article class="doacao-info">
+          <div class="chavepix-bloco">
+            <h3>Chave PIX</h3>
+            <i id="pix-icon" class="fa-brands fa-pix fa-2x"></i>
+            <p id="texto-pix">CNPJ: 62.907.580/0001-52</p>
+            <button id="botao-copiar" class="cta-button">Copiar</button>
+          </div>
+
+          <div class="dados-bancarios">
+            <h3>Dados Bancários</h3>
+            <ul>
+              <li>
+                <img id="cora-logo" src="./img/cora_logo.jpg" alt="Cora Logo" />
+              </li>
+              <li>Banco: Cora Sociedade de Crédito</li>
+              <li>Agência: 0001</li>
+              <li>C.C: 6311938-5</li>
+            </ul>
+          </div>
+        </article>
+      </section>
+    </main>
+
+    <footer id="contato">
+      <div class="footer-content">
+        <div class="footer-contato">
+          <img src="./img/logo.png" alt="Logo Aviva Church Beach - Rodapé" />
+
+          <!-- Informações de Contato (Endereço, Tel, Email) -->
+          <div class="contact-info">
+            <h4 class="mb-sm">Av. Tomé de Souza, 1053</h4>
+            <p>Centro, Bertioga - SP, 11250-000</p>
+
+            <ul class="contact-links">
+              <!-- TELEFONE/WHATSAPP -->
+              <li>
+                <a
+                  href="https://wa.me/5513996533554"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="WhatsApp da Aviva Church Beach"
+                >
+                  <i class="fab fa-whatsapp"></i> 13 99653-3554
+                </a>
+              </li>
+              <!-- EMAIL -->
+              <li>
+                <a href="mailto:avivabeach@hotmail.com">
+                  <i class="fas fa-envelope"></i> avivabeach@hotmail.com
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Ícones de Redes Sociais -->
+          <div class="social-icons">
+            <a
+              href="https://www.facebook.com/attractedbythecross"
+              target="_blank"
+              aria-label="Facebook Aviva Church"
+              ><i class="fab fa-facebook"></i
+            ></a>
+            <a
+              href="https://www.instagram.com/avivachurchbeach/"
+              target="_blank"
+              aria-label="Instagram Aviva Church"
+              ><i class="fab fa-instagram"></i
+            ></a>
+            <a
+              href="https://www.youtube.com/@avivachurchbeach2021/"
+              target="_blank"
+              aria-label="YouTube Aviva Church"
+              ><i class="fab fa-youtube"></i
+            ></a>
+          </div>
+        </div>
+      </div>
+
+      <p class="copyright">
+        Aviva Church Beach © 2025. Todos direitos reservados. | Desenvolvido por
+        <a
+          href="https://dev.davimafra.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+          >Davi Mafra</a
+        >
+      </p>
+    </footer>
+
+    <!-- JavaScript do Menu Hambúrguer -->
+    <script>
+      const hamburger = document.getElementById("hamburger");
+      const navMenu = document.getElementById("navMenu");
+      const menuOverlay = document.getElementById("menuOverlay");
+      const navLinks = document.querySelectorAll(".nav-link a, .cta-button");
+
+      // Toggle menu ao clicar no hambúrguer
+      hamburger.addEventListener("click", () => {
+        hamburger.classList.toggle("active");
+        navMenu.classList.toggle("active");
+        menuOverlay.classList.toggle("active");
+
+        // Previne scroll do body quando menu está aberto
+        document.body.style.overflow = navMenu.classList.contains("active")
+          ? "hidden"
+          : "";
+      });
+
+      // Fecha menu ao clicar no overlay
+      menuOverlay.addEventListener("click", () => {
+        hamburger.classList.remove("active");
+        navMenu.classList.remove("active");
+        menuOverlay.classList.remove("active");
+        document.body.style.overflow = "";
+      });
+
+      // Fecha menu ao clicar em um link
+      navLinks.forEach((link) => {
+        link.addEventListener("click", () => {
+          hamburger.classList.remove("active");
+          navMenu.classList.remove("active");
+          menuOverlay.classList.remove("active");
+          document.body.style.overflow = "";
+        });
+      });
+
+      // Fecha menu ao pressionar ESC
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape" && navMenu.classList.contains("active")) {
+          hamburger.classList.remove("active");
+          navMenu.classList.remove("active");
+          menuOverlay.classList.remove("active");
+          document.body.style.overflow = "";
+        }
+      });
+    </script>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        // 1. Seleciona os elementos pelo ID
+        const botaoCopiar = document.getElementById("botao-copiar");
+        const textoPixElemento = document.getElementById("texto-pix");
+
+        const textoParaCopiar = textoPixElemento.textContent.replace(
+          "CNPJ: ",
+          ""
+        );
+
+        // 3. Adiciona um ouvinte de evento de clique ao botão
+        botaoCopiar.addEventListener("click", async () => {
+          try {
+            await navigator.clipboard.writeText(textoParaCopiar);
+
+            // 4. Feedback visual (Opcional)
+            const textoOriginal = botaoCopiar.textContent;
+            botaoCopiar.textContent = "Copiado!"; // Muda o texto do botão
+            botaoCopiar.classList.add("copiado"); // Adiciona uma classe para estilização
+
+            // Reverte o texto e estilo após um breve período
+            setTimeout(() => {
+              botaoCopiar.textContent = textoOriginal;
+              botaoCopiar.classList.remove("copiado");
+            }, 1500); // 1.5 segundos
+          } catch (err) {
+            // Em caso de erro (ex: navegador antigo ou permissão negada)
+            console.error("Erro ao copiar: ", err);
+            alert(
+              "Falha ao copiar. Por favor, copie manualmente: " +
+                textoParaCopiar
+            );
+          }
+        });
+      });
+    </script>
+  </body>
 </html>
